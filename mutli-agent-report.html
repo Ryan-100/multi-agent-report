@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Adoption in Thai SMEs: A Multi-Agent Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F2F2F2;
+            color: #333333;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #7537E6, #00A6A6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-left: 5px solid #FFC15E;
+        }
+        .kpi-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #7537E6;
+        }
+        .kpi-label {
+            margin-top: 0.5rem;
+            font-size: 1.125rem;
+            color: #555;
+            font-weight: 600;
+        }
+        .section-card {
+             background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        @media (min-width: 1024px) {
+            .section-card {
+                 padding: 2.5rem;
+            }
+        }
+        .agent-card {
+            background: #fff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid #00A6A6;
+        }
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .agent-icon {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+        .agent-title {
+            font-weight: 700;
+            margin-top: 0.75rem;
+            color: #333;
+        }
+         .agent-connector {
+            position: absolute;
+            background-color: #FFC15E;
+            z-index: -1;
+        }
+        .provider-card {
+            background: linear-gradient(135deg, #7537E6, #5a29b3);
+            color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black mb-2 gradient-text">The AI Revolution in Thai SMEs</h1>
+            <p class="text-xl md:text-2xl text-gray-600 font-light">Unlocking Efficiency with Multi-Agent Workflows</p>
+        </header>
+
+        <section id="kpi-overview" class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="kpi-card">
+                    <div class="kpi-number">70%</div>
+                    <div class="kpi-label">Use or Experiment with AI</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-number">90%</div>
+                    <div class="kpi-label">Report Revenue Growth</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-number">84%</div>
+                    <div class="kpi-label">Are Optimistic for the Future</div>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-lg text-gray-700">Thai SMEs are rapidly embracing AI, driven by tangible revenue growth and strong optimism. This sets the stage for the next leap in business automation.</p>
+        </section>
+
+        <section id="workflow" class="mb-16">
+             <div class="section-card">
+                <h2 class="text-3xl font-bold text-center mb-4">The Multi-Agent Workflow Model</h2>
+                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">Instead of a single AI, a team of specialized 'agents' collaborates to automate complex business processes. An Orchestrator directs tasks to the right agent, creating a seamless, intelligent system.</p>
+                
+                <div class="relative flex justify-center items-center mb-8">
+                    <div class="agent-card w-48 z-10" style="border-top-color: #7537E6;">
+                        <div class="agent-icon">👑</div>
+                        <div class="agent-title">Orchestrator Agent</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10">
+                    <div class="agent-card">
+                        <div class="agent-icon">📄</div>
+                        <div class="agent-title">Document Summarizer</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-icon">📈</div>
+                        <div class="agent-title">P&L Calculator</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-icon">💰</div>
+                        <div class="agent-title">Cash Flow Tracker</div>
+                    </div>
+                     <div class="agent-card">
+                        <div class="agent-icon">🛡️</div>
+                        <div class="agent-title">Risk Manager</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-icon">✅</div>
+                        <div class="agent-title">Compliance Checker</div>
+                    </div>
+                     <div class="agent-card">
+                        <div class="agent-icon">🎯</div>
+                        <div class="agent-title">Budget Analyzer</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-icon">🤝</div>
+                        <div class="agent-title">Sales Assistant</div>
+                    </div>
+                    <div class="agent-card bg-gray-100">
+                        <div class="agent-icon">🗃️</div>
+                        <div class="agent-title">External Databases & APIs</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="adoption-landscape" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-10">The Adoption Landscape: Drivers vs. Challenges</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <div class="section-card">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Top Drivers for AI Integration</h3>
+                    <p class="text-center text-gray-600 mb-6">SMEs are motivated by powerful financial and operational incentives to adopt AI technologies.</p>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="driversChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Primary Barriers to Adoption</h3>
+                     <p class="text-center text-gray-600 mb-6">Despite optimism, significant hurdles related to skills, security, and data quality remain.</p>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="challengesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution-providers" class="mb-16">
+            <div class="section-card">
+                <h2 class="text-3xl font-bold text-center mb-4">Finding the Right Solution</h2>
+                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-12">No single off-the-shelf product delivers the entire multi-agent workflow. Success lies in partnering with specialists who can build and integrate a custom solution.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="provider-card">
+                        <h3 class="text-2xl font-bold mb-2">Custom Developers</h3>
+                        <p class="mb-4">Firms like Code District and Appsinvo can build the entire bespoke multi-agent workflow from the ground up, tailored to specific business needs.</p>
+                        <div class="text-right font-black text-4xl opacity-50">⚙️</div>
+                    </div>
+                    <div class="provider-card">
+                        <h3 class="text-2xl font-bold mb-2">AI Integrators</h3>
+                        <p class="mb-4">Providers like Outsourcify specialize in connecting proven, existing AI tools and models into a cohesive system, reducing development time and cost.</p>
+                         <div class="text-right font-black text-4xl opacity-50">🔗</div>
+                    </div>
+                    <div class="provider-card">
+                        <h3 class="text-2xl font-bold mb-2">AI-Powered Platforms</h3>
+                        <p class="mb-4">Solutions for specific agents are mature. Salesforce (Sales Assistant), Oracle/Epicor (Financial Agents), and ZWIZ.AI (Chatbots) are strong starting points.</p>
+                         <div class="text-right font-black text-4xl opacity-50">📦</div>
+                    </div>
+                     <div class="provider-card">
+                        <h3 class="text-2xl font-bold mb-2">Risk & Compliance Specialists</h3>
+                        <p class="mb-4">Specialized platforms like Fairly AI and tools like Thomson Reuters CoCounsel address the critical needs of risk management and regulatory compliance.</p>
+                         <div class="text-right font-black text-4xl opacity-50">⚖️</div>
+                    </div>
+                     <div class="provider-card">
+                        <h3 class="text-2xl font-bold mb-2">Strategic Consultants</h3>
+                        <p class="mb-4">Firms such as PwC, KPMG, and Microsoft provide high-level strategy for integrating AI, managing human-agent teams, and navigating organizational change.</p>
+                         <div class="text-right font-black text-4xl opacity-50">🧠</div>
+                    </div>
+                    <div class="provider-card">
+                        <h3 class="text-2xl font-bold mb-2">Government & Industry Support</h3>
+                        <p class="mb-4">Organizations like depa, AIS, and SCB provide crucial support through grants, tax incentives, training, and certified digital solutions.</p>
+                         <div class="text-right font-black text-4xl opacity-50">🇹🇭</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 text-gray-500">
+            <p>Data synthesized from "Multi-Agent Workflow for Business Automation: Solutions for SMEs in Thailand" report.</p>
+            <p>Infographic generated for demonstration purposes. &copy; 2025</p>
+        </footer>
+
+    </main>
+
+    <script>
+        (function() {
+            const wrapLabel = (str, maxWidth) => {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + " " + words[i]).length > maxWidth) {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    } else {
+                        currentLine += " " + words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+            
+            const sharedChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        },
+                        backgroundColor: '#333333',
+                        titleFont: { size: 14, weight: 'bold' },
+                        bodyFont: { size: 12 },
+                        padding: 10,
+                        cornerRadius: 4,
+                        displayColors: false,
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e0e0e0',
+                            borderColor: '#ccc'
+                        },
+                        ticks: {
+                            color: '#555',
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false,
+                            borderColor: '#ccc'
+                        },
+                        ticks: {
+                            color: '#333',
+                            font: {
+                                weight: '600'
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const driversData = {
+                labels: ['Revenue Growth', 'Operational Efficiency', 'Personalized Experiences', 'Productivity Boost', 'Staying Competitive'].map(l => wrapLabel(l, 16)),
+                datasets: [{
+                    label: 'Driver Importance',
+                    data: [90, 85, 80, 78, 75],
+                    backgroundColor: ['#00A6A6', '#00B8B8', '#00CACB', '#33D8D8', '#66E5E5'],
+                    borderColor: '#007C7C',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                }]
+            };
+
+            const challengesData = {
+                labels: ['Lack of Skilled Labor/Expertise', 'Security Concerns', 'Poor Data Quality', 'Customer Distrust of AI', 'Time Constraints'].map(l => wrapLabel(l, 16)),
+                datasets: [{
+                    label: 'Challenge Severity',
+                    data: [88, 82, 79, 70, 65],
+                    backgroundColor: ['#FF5C71', '#FF7386', '#FF8A9C', '#FFA1B1', '#FFB8C6'],
+                    borderColor: '#E64A60',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                }]
+            };
+
+            const driversCtx = document.getElementById('driversChart').getContext('2d');
+            new Chart(driversCtx, {
+                type: 'bar',
+                data: driversData,
+                options: sharedChartOptions
+            });
+
+            const challengesCtx = document.getElementById('challengesChart').getContext('2d');
+            new Chart(challengesCtx, {
+                type: 'bar',
+                data: challengesData,
+                options: sharedChartOptions
+            });
+
+        })();
+    </script>
+</body>
+</html>
